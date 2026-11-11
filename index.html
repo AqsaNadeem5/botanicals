@@ -123,8 +123,7 @@ main{display:block}
 
 /* ---------- Product showcase · water-ripple campaign ---------- */
 .showcase{position:relative;height:calc(100vh + var(--steps,6) * var(--step,86vh));height:calc(100svh + var(--steps,6) * var(--step,86svh));background:#06182c}
-.sc-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;color:var(--ivory);isolation:isolate;background:#06182c}
-.sc-right{position:absolute;inset:0;overflow:hidden;z-index:1}
+.sc-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;color:var(--ivory);background:#06182c;isolation:isolate}
 #sc-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .sc-fallback{position:absolute;inset:0;display:none;pointer-events:none;background:radial-gradient(60% 46% at 70% 74%,rgba(44,120,180,.5),transparent 72%),linear-gradient(180deg,#071a2e 0%,#0b2d4d 46%,#05172a 100%)}
 .sc-fallback .ring{position:absolute;border:1px solid rgba(180,215,245,.32);border-radius:50%;opacity:0;animation:scRing 5.4s cubic-bezier(.22,.8,.24,1) infinite}
@@ -135,50 +134,48 @@ main{display:block}
 .sc-stage{position:absolute;inset:0;z-index:2;pointer-events:none}
 .sc-prod{position:absolute;display:block;opacity:0;transform-origin:50% 100%;will-change:transform,opacity;user-select:none;-webkit-user-drag:none;max-width:none;filter:drop-shadow(0 26px 30px rgba(0,6,18,.5)) drop-shadow(0 0 46px var(--glow,rgba(255,200,140,.25)))}
 .sc-bead{position:absolute;left:0;top:0;width:13px;height:17px;margin:0;border-radius:50% 50% 50% 50%/64% 64% 36% 36%;z-index:3;opacity:0;pointer-events:none;will-change:transform,opacity;background:radial-gradient(circle at 36% 30%,#fff 0 11%,rgba(255,255,255,.6) 22%,var(--bead,#8fc0ee) 58%,rgba(8,40,80,.7) 100%);box-shadow:0 0 16px rgba(190,225,255,.4)}
-.sc-copy{position:absolute;left:var(--gut);top:50%;width:min(calc(50vw - var(--gut) * 2),500px);z-index:4;transform:translate3d(0,calc(-50% + var(--cy,0px)),0);will-change:transform,opacity}
+.sc-copy{position:absolute;left:var(--gut);top:50%;width:min(36vw,500px);z-index:4;transform:translate3d(0,calc(-50% + var(--cy,0px)),0);will-change:transform,opacity}
 .sc-kicker{display:flex;gap:14px;align-items:center;color:var(--acc,var(--rose))}
-.sc-kicker b{font-weight:500;color:var(--ttl,var(--cream));font-variant-numeric:tabular-nums}
-.sc-copy h2{font-size:clamp(2.3rem,3.8vw,4.2rem);font-weight:300;margin:16px 0 10px;text-wrap:balance;color:var(--ttl,var(--ivory));text-shadow:0 2px 26px rgba(0,10,30,.5)}
-.sc-brand{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brand,rgba(255,249,244,.68));min-height:1.2em}
+.sc-kicker b{font-weight:500;color:var(--cream);font-variant-numeric:tabular-nums}
+.sc-copy h2{font-size:clamp(2.4rem,4.2vw,4.6rem);font-weight:300;margin:16px 0 10px;text-wrap:balance;text-shadow:0 2px 26px rgba(0,10,30,.5)}
+.sc-brand{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,249,244,.68);min-height:1.2em}
 .sc-tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,1.7vw,1.6rem);color:var(--acc,var(--rose));margin-top:16px;font-weight:300}
 .sc-buy{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:30px}
 .sc-buy .btn{padding:0 24px}
-.sc-price{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--acc,var(--cream));margin-right:4px;font-variant-numeric:lining-nums}
-.sc-buy .btn-cream{background:var(--btn,var(--cream));color:var(--btn-ink,var(--espresso));box-shadow:0 10px 30px -12px var(--btn,rgba(255,232,173,.55))}
-.sc-buy .btn-cream:hover{filter:brightness(1.1)}
-.sc-buy .heart{border:1px solid var(--acc-line,rgba(255,249,244,.3));color:var(--ttl,var(--ivory));width:46px;height:46px}
-.sc-view{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--ttl,var(--ivory));border-bottom:1px solid var(--acc-line,rgba(255,249,244,.45));padding-bottom:3px;transition:border-color .25s,color .25s}
-.sc-view:hover{border-color:var(--acc,var(--ivory))}
-.sc-peek{position:absolute;bottom:34px;right:30px;width:clamp(110px,10vw,160px);height:clamp(146px,18vh,200px);z-index:7;pointer-events:none}
+.sc-price{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--cream);margin-right:4px;font-variant-numeric:lining-nums}
+.sc-buy .heart{border:1px solid rgba(255,249,244,.3);width:46px;height:46px}
+.sc-view{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--ivory);border-bottom:1px solid rgba(255,249,244,.45);padding-bottom:3px;transition:border-color .25s,color .25s}
+.sc-view:hover{border-color:var(--ivory)}
+.sc-peek{position:absolute;bottom:calc(max(22px,env(safe-area-inset-bottom)) + 62px);width:clamp(104px,10.5vw,156px);height:clamp(140px,17vh,190px);z-index:4;pointer-events:none}
+.sc-peek.r{right:var(--gut)}.sc-peek.l{left:var(--gut)}
 .sc-pk{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:10px;opacity:0;visibility:hidden;transform-origin:50% 100%;will-change:transform,opacity;pointer-events:auto;cursor:pointer;color:var(--ivory)}
 .sc-pk img{display:block;max-width:100%;height:calc(100% - 28px);object-fit:contain;filter:drop-shadow(0 10px 14px rgba(0,8,20,.5));pointer-events:none}
 .sc-pk small{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,249,244,.74);white-space:nowrap;position:relative;z-index:1}
 .sc-pk::before,.sc-pk::after{content:"";position:absolute;left:50%;bottom:18px;border:1px solid rgba(190,225,255,.3);border-radius:50%;transform:translateX(-50%);pointer-events:none}
-.sc-pk::before{width:104%;height:24px}.sc-pk::after{width:128%;height:38px;bottom:11px;opacity:.5}
+.sc-pk::before{width:104%;height:24px}.sc-pk::after{width:158%;height:38px;bottom:11px;opacity:.5}
 .sc-pk:hover img{filter:drop-shadow(0 10px 14px rgba(0,8,20,.5)) brightness(1.12)}
-.sc-hud{position:absolute;left:var(--gut);right:calc(50% + var(--gut));bottom:max(22px,env(safe-area-inset-bottom));z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.sc-count{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08em;color:var(--ttl,var(--ivory));font-variant-numeric:tabular-nums;min-width:90px}
+.sc-hud{position:absolute;left:var(--gut);right:var(--gut);bottom:max(22px,env(safe-area-inset-bottom));z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.sc-count{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08em;color:var(--ivory);font-variant-numeric:tabular-nums;min-width:90px}
 .sc-count small{color:rgba(255,249,244,.55);font-size:.9rem}
 .sc-ticks{display:flex;gap:6px;align-items:center;flex:1;max-width:340px;justify-content:center}
 .sc-tick{height:28px;width:28px;display:grid;place-items:center}
 .sc-tick i{display:block;width:100%;height:2px;background:rgba(255,249,244,.28);transition:background .4s,height .4s,transform .4s;border-radius:2px}
-.sc-tick[aria-current="true"] i{background:var(--acc,var(--cream));height:3px;transform:scaleX(1.15)}
+.sc-tick[aria-current="true"] i{background:var(--cream);height:3px;transform:scaleX(1.15)}
 .sc-nav{display:flex;gap:10px;min-width:90px;justify-content:flex-end}
 .sc-nav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,249,244,.3);display:grid;place-items:center;transition:background .25s,border-color .25s,opacity .25s}
 .sc-nav button:hover:not([disabled]){background:rgba(255,249,244,.12);border-color:var(--ivory)}
 .sc-nav button[disabled]{opacity:.3;cursor:default}
-.sc-hint{position:absolute;left:var(--gut);top:calc(var(--header-h) + 22px);z-index:4;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--brand,rgba(255,249,244,.55))}
+.sc-hint{position:absolute;right:var(--gut);top:calc(var(--header-h) + 22px);z-index:4;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,249,244,.55)}
 /* stacked layout: tablet portrait + phones — product on top, copy beneath, previews flank the product */
 .showcase.is-stacked{--step:68svh;--step:68vh}
 .showcase.is-stacked .sc-copy{left:var(--gut);right:var(--gut);width:auto;top:auto;bottom:calc(max(22px,env(safe-area-inset-bottom)) + 62px);transform:translate3d(0,var(--cy,0px),0)}
-.showcase.is-stacked .sc-hud{right:var(--gut)}
 .showcase.is-stacked .sc-copy h2{font-size:clamp(1.9rem,8vw,2.7rem);margin:10px 0 6px}
 .showcase.is-stacked .sc-tag{margin-top:6px;font-size:1.12rem}
 .showcase.is-stacked .sc-brand{font-size:.64rem}
 .showcase.is-stacked .sc-buy{margin-top:16px;gap:10px 14px}
 .showcase.is-stacked .sc-price{font-size:1.6rem}
 .showcase.is-stacked .sc-hint{display:none}
-.showcase.is-stacked .sc-peek{bottom:auto;top:var(--peek-y,40%);right:14px;width:clamp(64px,17vw,100px);height:clamp(86px,12vh,118px)}
+.showcase.is-stacked .sc-peek{bottom:auto;top:var(--peek-y,40%);width:clamp(64px,17vw,104px);height:clamp(86px,12vh,120px)}
 .showcase.is-stacked .sc-pk small{font-size:.5rem;letter-spacing:.18em}
 .showcase.is-stacked .sc-ticks{max-width:none;min-width:0;gap:2px}.showcase.is-stacked .sc-tick{width:22px}.showcase.is-stacked .sc-count{min-width:62px}.showcase.is-stacked .sc-nav{min-width:0}
 @media (max-height:520px) and (orientation:landscape){
@@ -500,13 +497,10 @@ dialog::backdrop{background:rgba(33,24,32,.62);-webkit-backdrop-filter:blur(3px)
 
   <section class="showcase" id="showcase" aria-label="Featured collection — scroll to browse products" aria-roledescription="carousel">
     <div class="sc-pin" id="sc-pin">
-    <div class="sc-right" id="sc-right">
-        <canvas id="sc-canvas" aria-hidden="true"></canvas>
-        <div class="sc-fallback" id="sc-fallback" aria-hidden="true"><i class="ring"></i><i class="ring"></i><i class="ring"></i></div>
-        <div class="sc-stage" id="sc-stage" aria-hidden="true"></div>
-        <i class="sc-bead" id="sc-bead" aria-hidden="true"></i>
-        <div class="sc-peek r" id="sc-peek-r" role="group" aria-label="Coming up next"></div>
-    </div>
+      <canvas id="sc-canvas" aria-hidden="true"></canvas>
+      <div class="sc-fallback" id="sc-fallback" aria-hidden="true"><i class="ring"></i><i class="ring"></i><i class="ring"></i></div>
+      <div class="sc-stage" id="sc-stage" aria-hidden="true"></div>
+      <i class="sc-bead" id="sc-bead" aria-hidden="true"></i>
       <div class="sc-copy" id="sc-copy">
         <p class="eyebrow sc-kicker"><b id="sc-num">01</b><span id="sc-cat"></span></p>
         <h2 id="sc-title"></h2>
@@ -519,6 +513,8 @@ dialog::backdrop{background:rgba(33,24,32,.62);-webkit-backdrop-filter:blur(3px)
           <a class="sc-view" id="sc-view" href="#/">View details</a>
         </div>
       </div>
+      <div class="sc-peek r" id="sc-peek-r" role="group" aria-label="Coming up next"></div>
+      <div class="sc-peek l" id="sc-peek-l" role="group" aria-label="Coming up after that"></div>
       <p class="sc-hint" aria-hidden="true">Scroll · or use ← →</p>
       <div class="sc-hud">
         <div class="sc-count" id="sc-count" aria-hidden="true">01 <small>/ 07</small></div>
@@ -1255,15 +1251,6 @@ const SC_PALETTES = {   // [deep water, mid water, warm light] — chosen to com
   'body-raspberry': ['#120e2e', '#43358f', '#e0557f'],   // raspberry    → violet-blue + raspberry light
   'cream-dlirss':   ['#041f2e', '#12788a', '#ff9a3c'],   // gold/orange  → teal water + tangerine light
 };
-const SC_TEXT = {       // typography colours taken from each pack: [headline tint, accent, button]
-  'serum-vince':    ['#fff1dc', '#f2b46a', '#e8963f'],
-  'cream-jade':     ['#ffeef0', '#f7a9b6', '#f29aa8'],
-  'mask-oriflame':  ['#f1eefb', '#cfc8ec', '#c6bfe6'],
-  'cleanser-rose':  ['#fff0f2', '#f8b4c0', '#f4a3b2'],
-  'mist-rose':      ['#ffeef0', '#ff8fa2', '#ff7088'],
-  'body-raspberry': ['#ffeaf1', '#f07a9f', '#e0557f'],
-  'cream-dlirss':   ['#fff2e0', '#ffb066', '#ff9a3c'],
-};
 const SC_VERT = `attribute vec2 aPos; void main(){ gl_Position = vec4(aPos,0.,1.); }`;
 const SC_FRAG = `
 precision highp float;
@@ -1392,8 +1379,8 @@ void main(){
 }`;
 
 const Showcase = (() => {
-  const el = $('#showcase'), pin = $('#sc-pin'), right = $('#sc-right'), canvas = $('#sc-canvas'), copy = $('#sc-copy'), fb = $('#sc-fallback');
-  const stage = $('#sc-stage'), bead = $('#sc-bead'), peekR = $('#sc-peek-r');
+  const el = $('#showcase'), pin = $('#sc-pin'), canvas = $('#sc-canvas'), copy = $('#sc-copy'), fb = $('#sc-fallback');
+  const stage = $('#sc-stage'), bead = $('#sc-bead'), peekR = $('#sc-peek-r'), peekL = $('#sc-peek-l');
   const items = CONFIG.featured.map(id => PRODUCT_MAP[id]).filter(p => p && p.cutout);
   const N = items.length;
   if (!N) { el.hidden = true; return { refresh() {}, sync() {} }; }
@@ -1426,7 +1413,7 @@ const Showcase = (() => {
       h('small', { text: `${pad(k + 1)} · ${CAT[p.category].label}` }));
     host.append(b); return b;
   });
-  const pkR = mkPeek(peekR, 'Next');
+  const pkR = mkPeek(peekR, 'Next'), pkL = mkPeek(peekL, 'Then');
   const ticks = $('#sc-ticks');
   items.forEach((p, i) => ticks.append(h('button', { class: 'sc-tick', type: 'button', 'aria-label': `Show product ${i + 1}: ${p.name}`, 'aria-current': 'false', onclick: () => scrollToStage(i) }, h('i'))));
   $('#sc-prev').addEventListener('click', () => scrollToStage(cur - 1));
@@ -1440,9 +1427,8 @@ const Showcase = (() => {
     $('#sc-title').textContent = p.name; $('#sc-brand').textContent = [p.brand, p.format].filter(Boolean).join(' · ');
     $('#sc-tag').textContent = p.tagline || ''; $('#sc-price').textContent = money(p.price);
     $('#sc-view').setAttribute('href', '#/product/' + p.id); $('#sc-view').setAttribute('aria-label', 'View details: ' + p.name);
-    const tx = SC_TEXT[p.id] || ['#fff9f4', '#f4b6a0', '#ffe8ad'], rgb = c => hex(c).map(v => Math.round(v * 255)).join(',');
-    pin.style.setProperty('--ttl', tx[0]); pin.style.setProperty('--acc', tx[1]); pin.style.setProperty('--btn', tx[2]);
-    pin.style.setProperty('--btn-ink', '#1b1020'); pin.style.setProperty('--brand', `rgba(${rgb(tx[1])},.82)`); pin.style.setProperty('--acc-line', `rgba(${rgb(tx[1])},.55)`);
+    const lt = mixv(pal[i][2], [1, 1, 1], .25).map(v => Math.round(v * 255));
+    copy.style.setProperty('--acc', `rgb(${lt[0]},${lt[1]},${lt[2]})`);
     const wm = pal[i][2].map(v => Math.round(v * 255)); bead.style.setProperty('--bead', `rgb(${Math.min(255, wm[0] + 40)},${Math.min(255, wm[1] + 60)},${Math.min(255, wm[2] + 70)})`);
     sync();
   }
@@ -1460,13 +1446,12 @@ const Showcase = (() => {
 
   /* ---------- layout ---------- */
   function layout() {
-    const pw = pin.clientWidth, ph = pin.clientHeight;
-    if (!pw || !ph) return;
-    const desktop = pw >= 900 && pw / ph >= 1.0;
+    const w = pin.clientWidth, hh = pin.clientHeight;
+    if (!w || !hh) return;
+    const desktop = w >= 900 && w / hh >= 1.0;
     el.classList.toggle('is-stacked', !desktop);
-    const w = pw, hh = ph;
     let slotW, slotH, cx, base, hor;
-    if (desktop) { slotW = Math.min(.38 * w, 600); slotH = .56 * hh; cx = .75 * w; base = .715 * hh; hor = .30 * hh; }
+    if (desktop) { slotW = Math.min(.33 * w, 580); slotH = .56 * hh; cx = .70 * w; base = .715 * hh; hor = .30 * hh; }
     else { slotW = Math.min(.78 * w, 440); slotH = Math.min(.34 * hh, 330); const top = Math.max(.115 * hh, 86); cx = .5 * w; base = top + slotH; hor = .2 * hh; pin.style.setProperty('--peek-y', (base - slotH * .42) + 'px'); }
     rects = items.map((p, i) => {
       const asp = aspect[i], wmax = slotW * (asp > 1.5 ? 1.2 : 1);
@@ -1535,7 +1520,7 @@ const Showcase = (() => {
   }
   function update(f, time) {
     const i = clamp(Math.floor(f), 0, N - 1), t = i >= N - 1 ? 0 : clamp(f - i, 0, 1);
-    const lv = 1 - smooth(.06, .36, t), ar = smooth(.56, .86, t), hasB = i + 1 < N;
+    const lv = 1 - smooth(.16, .62, t), ar = smooth(.38, .84, t), hasB = i + 1 < N;
     const reduced = REDUCED.matches;
 
     // current stage → text, hud, ripple event
@@ -1544,7 +1529,7 @@ const Showcase = (() => {
       const first = cur < 0; cur = c; fillText(c); hud(c);
       if (!first && !reduced && mode === 'gl') evtT0 = time;
     }
-    const dd = Math.abs(f - cur), op = 1 - smooth(.14, .4, dd);
+    const dd = Math.abs(f - cur), op = 1 - smooth(.14, .46, dd);
     copy.style.opacity = op.toFixed(3);
     copy.style.setProperty('--cy', ((f > cur ? -1 : 1) * (1 - op) * 18).toFixed(1) + 'px');
     copy.style.pointerEvents = op > .6 ? '' : 'none';
@@ -1558,16 +1543,19 @@ const Showcase = (() => {
 
     // corner previews (progressive: Next → fades up as it approaches, Then → follows)
     for (let k = 0; k < N; k++) {
-      const d = k - f; let oR = 0;
-      if (d > 0) oR = d >= 1 ? clamp((1.5 - d) / .5, 0, 1) : clamp((d - .5) / .5, 0, 1);
-      setPeek(pkR[k], oR, .86 + .14 * oR);
+      const d = k - f; let oR = 0, oL = 0;
+      if (d > 0) {
+        oR = d >= 1 ? clamp((1.6 - d) / .6, 0, 1) : clamp((d - .35) / .65, 0, 1);
+        oL = d >= 2 ? clamp((2.6 - d) / .6, 0, 1) : clamp((d - 1.5) / .5, 0, 1);
+      }
+      setPeek(pkR[k], oR, .86 + .14 * oR); setPeek(pkL[k], oL, .8 + .2 * oL);
     }
 
     // droplet (DOM, above the product): scroll-scrubbed while changing product, otherwise on the water's own rhythm
     let by = -1e9, bq = 0;
     if (mode === 'gl' && !reduced && lay) {
-      if (t > .1 && t < .9 && hasB) {
-        const q = dir >= 0 ? (t - .1) / .4 : (.9 - t) / .4;
+      if (t > .08 && t < .92 && hasB) {
+        const q = dir >= 0 ? (t - .08) / .42 : (.92 - t) / .42;
         if (q > 0 && q < 1) { bq = q; by = -30 + (lay.oy - 10 + 30) * q * q; }
       } else {
         const tau = PERIOD - (time % PERIOD);
@@ -1601,7 +1589,7 @@ const Showcase = (() => {
     raf = 0;
     if (!visible || document.hidden || !lay) return;
     const dt = Math.min(.1, (now - last) / 1000 || .016); last = now;
-    disp += (target - disp) * (1 - Math.exp(-dt * 6)); if (Math.abs(target - disp) < 5e-4) disp = target;
+    disp += (target - disp) * (1 - Math.exp(-dt * 8)); if (Math.abs(target - disp) < 5e-4) disp = target;
     update(disp, now / 1000);
     if (mode === 'gl' && !REDUCED.matches) {          // adaptive quality keeps scrolling smooth on slower GPUs
       ema = ema * .93 + dt * .07; slow = ema > .03 ? slow + 1 : Math.max(0, slow - 2);
@@ -1635,7 +1623,7 @@ const Showcase = (() => {
       st = ScrollTrigger.create({
         trigger: el, start: 'top top', end: 'bottom bottom',
         onUpdate: s => onProgress(s.progress), onRefresh: s => onProgress(s.progress),
-        snap: snapOn ? { snapTo: (v, self) => snapTarget(v, self ? self.direction : 0), duration: { min: .9, max: 1.5 }, delay: .12, ease: 'power2.inOut' } : false,
+        snap: snapOn ? { snapTo: (v, self) => snapTarget(v, self ? self.direction : 0), duration: { min: .25, max: .6 }, delay: .14, ease: 'power2.inOut' } : false,
       });
     } else {   // dependency-free driver
       let tick = false, idle = 0, lastY = window.scrollY, d = 0;
