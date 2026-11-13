@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Aqsa Botanicals — Skincare, softly considered</title>
+<title>ELORIA BEAUTY — Beauty that feels like you.</title>
 <meta name="description" content="A cinematic skincare storefront: serums, creams, clay masks, cleansers, mists and body care.">
 <meta name="theme-color" content="#211820">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
@@ -121,70 +121,60 @@ main{display:block}
 .intro-scroll span{display:block;width:1px;height:46px;background:linear-gradient(var(--rose),transparent);animation:cue 2.4s ease-in-out infinite;transform-origin:top}
 @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
-/* ---------- Product showcase · water-ripple campaign ---------- */
-.showcase{position:relative;height:calc(100vh + var(--steps,6) * var(--step,86vh));height:calc(100svh + var(--steps,6) * var(--step,86svh));background:#06182c}
-.sc-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;color:var(--ivory);background:#06182c;isolation:isolate}
+/* ---------- ELORIA BEAUTY · product showcase (water simulation) ---------- */
+.showcase{--ink:#1f1c20;position:relative;height:calc(100vh + var(--steps,6) * var(--step,86vh));height:calc(100svh + var(--steps,6) * var(--step,86svh));background:#dcdfe3}
+.sc-pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;color:var(--ink);isolation:isolate;background:#dcdfe3}
 #sc-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.sc-fallback{position:absolute;inset:0;display:none;pointer-events:none;background:radial-gradient(60% 46% at 70% 74%,rgba(44,120,180,.5),transparent 72%),linear-gradient(180deg,#071a2e 0%,#0b2d4d 46%,#05172a 100%)}
-.sc-fallback .ring{position:absolute;border:1px solid rgba(180,215,245,.32);border-radius:50%;opacity:0;animation:scRing 5.4s cubic-bezier(.22,.8,.24,1) infinite}
+.sc-fallback{position:absolute;inset:0;display:none;pointer-events:none;background:radial-gradient(60% 46% at 52% 72%,#f4f1ee,transparent 72%),linear-gradient(180deg,#e7e5e3 0%,#d3d6db 55%,#c4c8ce 100%)}
+.sc-fallback .ring{position:absolute;border:1px solid rgba(60,64,72,.3);border-radius:50%;opacity:0;animation:scRing 5.4s cubic-bezier(.22,.8,.24,1) infinite}
 .sc-fallback .ring:nth-child(2){animation-delay:1.4s}.sc-fallback .ring:nth-child(3){animation-delay:2.8s}
 @keyframes scRing{0%{transform:scale(.04);opacity:0}12%{opacity:.7}100%{transform:scale(1);opacity:0}}
 .showcase.is-fallback #sc-canvas{display:none}
 .showcase.is-fallback .sc-fallback{display:block}
 .sc-stage{position:absolute;inset:0;z-index:2;pointer-events:none}
-.sc-prod{position:absolute;display:block;opacity:0;transform-origin:50% 100%;will-change:transform,opacity;user-select:none;-webkit-user-drag:none;max-width:none;filter:drop-shadow(0 26px 30px rgba(0,6,18,.5)) drop-shadow(0 0 46px var(--glow,rgba(255,200,140,.25)))}
-.sc-bead{position:absolute;left:0;top:0;width:13px;height:17px;margin:0;border-radius:50% 50% 50% 50%/64% 64% 36% 36%;z-index:3;opacity:0;pointer-events:none;will-change:transform,opacity;background:radial-gradient(circle at 36% 30%,#fff 0 11%,rgba(255,255,255,.6) 22%,var(--bead,#8fc0ee) 58%,rgba(8,40,80,.7) 100%);box-shadow:0 0 16px rgba(190,225,255,.4)}
-.sc-copy{position:absolute;left:var(--gut);top:50%;width:min(36vw,500px);z-index:4;transform:translate3d(0,calc(-50% + var(--cy,0px)),0);will-change:transform,opacity}
-.sc-kicker{display:flex;gap:14px;align-items:center;color:var(--acc,var(--rose))}
-.sc-kicker b{font-weight:500;color:var(--cream);font-variant-numeric:tabular-nums}
-.sc-copy h2{font-size:clamp(2.4rem,4.2vw,4.6rem);font-weight:300;margin:16px 0 10px;text-wrap:balance;text-shadow:0 2px 26px rgba(0,10,30,.5)}
-.sc-brand{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,249,244,.68);min-height:1.2em}
-.sc-tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,1.7vw,1.6rem);color:var(--acc,var(--rose));margin-top:16px;font-weight:300}
+.sc-prod{position:absolute;display:block;opacity:0;transform-origin:50% 100%;will-change:transform,opacity;user-select:none;-webkit-user-drag:none;max-width:none;filter:drop-shadow(0 26px 24px rgba(40,34,40,.28))}
+.sc-copy{position:absolute;left:var(--gut);top:50%;width:min(calc(50vw - var(--gut) * 2),500px);z-index:4;transform:translate3d(0,calc(-50% + var(--cy,0px)),0);will-change:transform,opacity}
+.sc-kicker{display:flex;gap:14px;align-items:center;color:var(--acc,#8a6a4f)}
+.sc-kicker b{font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums}
+.sc-copy h2{font-size:clamp(2.3rem,3.8vw,4.2rem);font-weight:300;margin:16px 0 10px;text-wrap:balance;color:var(--ink)}
+.sc-brand{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(31,28,32,.62);min-height:1.2em}
+.sc-tag{font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,1.7vw,1.6rem);color:var(--acc,#8a6a4f);margin-top:16px;font-weight:300}
 .sc-buy{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:30px}
 .sc-buy .btn{padding:0 24px}
-.sc-price{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--cream);margin-right:4px;font-variant-numeric:lining-nums}
-.sc-buy .heart{border:1px solid rgba(255,249,244,.3);width:46px;height:46px}
-.sc-view{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--ivory);border-bottom:1px solid rgba(255,249,244,.45);padding-bottom:3px;transition:border-color .25s,color .25s}
-.sc-view:hover{border-color:var(--ivory)}
-.sc-peek{position:absolute;bottom:calc(max(22px,env(safe-area-inset-bottom)) + 62px);width:clamp(104px,10.5vw,156px);height:clamp(140px,17vh,190px);z-index:4;pointer-events:none}
-.sc-peek.r{right:var(--gut)}.sc-peek.l{left:var(--gut)}
-.sc-pk{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:10px;opacity:0;visibility:hidden;transform-origin:50% 100%;will-change:transform,opacity;pointer-events:auto;cursor:pointer;color:var(--ivory)}
-.sc-pk img{display:block;max-width:100%;height:calc(100% - 28px);object-fit:contain;filter:drop-shadow(0 10px 14px rgba(0,8,20,.5));pointer-events:none}
-.sc-pk small{font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,249,244,.74);white-space:nowrap;position:relative;z-index:1}
-.sc-pk::before,.sc-pk::after{content:"";position:absolute;left:50%;bottom:18px;border:1px solid rgba(190,225,255,.3);border-radius:50%;transform:translateX(-50%);pointer-events:none}
-.sc-pk::before{width:104%;height:24px}.sc-pk::after{width:158%;height:38px;bottom:11px;opacity:.5}
-.sc-pk:hover img{filter:drop-shadow(0 10px 14px rgba(0,8,20,.5)) brightness(1.12)}
-.sc-hud{position:absolute;left:var(--gut);right:var(--gut);bottom:max(22px,env(safe-area-inset-bottom));z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.sc-count{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08em;color:var(--ivory);font-variant-numeric:tabular-nums;min-width:90px}
-.sc-count small{color:rgba(255,249,244,.55);font-size:.9rem}
+.sc-price{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--ink);margin-right:4px;font-variant-numeric:lining-nums}
+.sc-buy .btn-cream{background:var(--ink);color:#f6f1ea;box-shadow:0 12px 28px -14px rgba(31,28,32,.6)}
+.sc-buy .btn-cream:hover{background:var(--acc,#3a3338)}
+.sc-buy .heart{border:1px solid rgba(31,28,32,.3);color:var(--ink);width:46px;height:46px}
+.sc-view{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--acc-line,rgba(31,28,32,.4));padding-bottom:3px;transition:border-color .25s,color .25s}
+.sc-view:hover{border-color:var(--ink)}
+.sc-peek{position:absolute;right:30px;bottom:18px;width:150px;height:30px;z-index:5;display:flex;justify-content:center;align-items:flex-end;cursor:pointer;color:rgba(31,28,32,.62);font-size:.58rem;letter-spacing:.24em;text-transform:uppercase;opacity:0}
+.sc-peek:hover{color:var(--ink)}
+.sc-hud{position:absolute;left:var(--gut);right:calc(50% + var(--gut));bottom:max(22px,env(safe-area-inset-bottom));z-index:5;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.sc-count{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08em;color:var(--ink);font-variant-numeric:tabular-nums;min-width:90px}
+.sc-count small{color:rgba(31,28,32,.5);font-size:.9rem}
 .sc-ticks{display:flex;gap:6px;align-items:center;flex:1;max-width:340px;justify-content:center}
 .sc-tick{height:28px;width:28px;display:grid;place-items:center}
-.sc-tick i{display:block;width:100%;height:2px;background:rgba(255,249,244,.28);transition:background .4s,height .4s,transform .4s;border-radius:2px}
-.sc-tick[aria-current="true"] i{background:var(--cream);height:3px;transform:scaleX(1.15)}
+.sc-tick i{display:block;width:100%;height:2px;background:rgba(31,28,32,.25);transition:background .4s,height .4s,transform .4s;border-radius:2px}
+.sc-tick[aria-current="true"] i{background:var(--acc,var(--ink));height:3px;transform:scaleX(1.15)}
 .sc-nav{display:flex;gap:10px;min-width:90px;justify-content:flex-end}
-.sc-nav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,249,244,.3);display:grid;place-items:center;transition:background .25s,border-color .25s,opacity .25s}
-.sc-nav button:hover:not([disabled]){background:rgba(255,249,244,.12);border-color:var(--ivory)}
+.sc-nav button{width:44px;height:44px;border-radius:50%;border:1px solid rgba(31,28,32,.3);color:var(--ink);display:grid;place-items:center;transition:background .25s,border-color .25s,opacity .25s}
+.sc-nav button:hover:not([disabled]){background:rgba(31,28,32,.08);border-color:var(--ink)}
 .sc-nav button[disabled]{opacity:.3;cursor:default}
-.sc-hint{position:absolute;right:var(--gut);top:calc(var(--header-h) + 22px);z-index:4;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,249,244,.55)}
-/* stacked layout: tablet portrait + phones — product on top, copy beneath, previews flank the product */
+.sc-hint{position:absolute;left:var(--gut);top:calc(var(--header-h) + 22px);z-index:4;font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(31,28,32,.5)}
+/* stacked layout: tablet portrait + phones — product on top, copy beneath */
 .showcase.is-stacked{--step:68svh;--step:68vh}
 .showcase.is-stacked .sc-copy{left:var(--gut);right:var(--gut);width:auto;top:auto;bottom:calc(max(22px,env(safe-area-inset-bottom)) + 62px);transform:translate3d(0,var(--cy,0px),0)}
+.showcase.is-stacked .sc-hud{right:var(--gut)}
 .showcase.is-stacked .sc-copy h2{font-size:clamp(1.9rem,8vw,2.7rem);margin:10px 0 6px}
 .showcase.is-stacked .sc-tag{margin-top:6px;font-size:1.12rem}
 .showcase.is-stacked .sc-brand{font-size:.64rem}
 .showcase.is-stacked .sc-buy{margin-top:16px;gap:10px 14px}
 .showcase.is-stacked .sc-price{font-size:1.6rem}
 .showcase.is-stacked .sc-hint{display:none}
-.showcase.is-stacked .sc-peek{bottom:auto;top:var(--peek-y,40%);width:clamp(64px,17vw,104px);height:clamp(86px,12vh,120px)}
-.showcase.is-stacked .sc-pk small{font-size:.5rem;letter-spacing:.18em}
+.showcase.is-stacked .sc-peek{right:8px;bottom:auto;top:calc(var(--peek-y,40%));width:100px}
 .showcase.is-stacked .sc-ticks{max-width:none;min-width:0;gap:2px}.showcase.is-stacked .sc-tick{width:22px}.showcase.is-stacked .sc-count{min-width:62px}.showcase.is-stacked .sc-nav{min-width:0}
-@media (max-height:520px) and (orientation:landscape){
-  .sc-copy{width:min(46vw,440px)}.sc-copy h2{font-size:2rem}.sc-tag{display:none}.sc-peek{display:none}
-}
-@media (prefers-reduced-motion:reduce){
-  .sc-fallback .ring{animation:none}
-  .sc-copy,.sc-prod,.sc-pk{transition:opacity .5s linear!important}
-}
+@media (max-height:520px) and (orientation:landscape){.sc-copy{width:min(46vw,440px)}.sc-copy h2{font-size:2rem}.sc-tag{display:none}.sc-peek{display:none}}
+@media (prefers-reduced-motion:reduce){.sc-fallback .ring{animation:none}}
 .heart{display:inline-grid;place-items:center;border-radius:50%;transition:background .25s,color .25s,transform .25s}
 .heart[aria-pressed="true"] .icon{fill:var(--berry);stroke:var(--berry)}
 .heart:hover{transform:scale(1.06)}
@@ -500,7 +490,6 @@ dialog::backdrop{background:rgba(33,24,32,.62);-webkit-backdrop-filter:blur(3px)
       <canvas id="sc-canvas" aria-hidden="true"></canvas>
       <div class="sc-fallback" id="sc-fallback" aria-hidden="true"><i class="ring"></i><i class="ring"></i><i class="ring"></i></div>
       <div class="sc-stage" id="sc-stage" aria-hidden="true"></div>
-      <i class="sc-bead" id="sc-bead" aria-hidden="true"></i>
       <div class="sc-copy" id="sc-copy">
         <p class="eyebrow sc-kicker"><b id="sc-num">01</b><span id="sc-cat"></span></p>
         <h2 id="sc-title"></h2>
@@ -513,8 +502,7 @@ dialog::backdrop{background:rgba(33,24,32,.62);-webkit-backdrop-filter:blur(3px)
           <a class="sc-view" id="sc-view" href="#/">View details</a>
         </div>
       </div>
-      <div class="sc-peek r" id="sc-peek-r" role="group" aria-label="Coming up next"></div>
-      <div class="sc-peek l" id="sc-peek-l" role="group" aria-label="Coming up after that"></div>
+      <button class="sc-peek" id="sc-peek" type="button"><span id="sc-peek-cap"></span></button>
       <p class="sc-hint" aria-hidden="true">Scroll · or use ← →</p>
       <div class="sc-hud">
         <div class="sc-count" id="sc-count" aria-hidden="true">01 <small>/ 07</small></div>
@@ -680,8 +668,8 @@ window.AQSA_SHOWCASE_TEX = {"serum-vince": {"w": 444, "h": 1200, "uri": "data:im
    ===================================================================== */
 const CONFIG = {
   brand: {
-    name: 'Aqsa Botanicals',                 // ← rename the whole site here (taken from your earlier index.html)
-    tagline: 'Skincare, softly considered',
+    name: 'ELORIA BEAUTY',                 // ← rename the whole site here (taken from your earlier index.html)
+    tagline: 'Beauty that feels like you.',
     lede: 'Serums, creams, clay masks, cleansers and mists — presented the way a campaign would, shopped the way you would.',
     storageKey: 'aqsa-botanicals',           // localStorage namespace for bag + wishlist
   },
@@ -1236,188 +1224,175 @@ $('#nl-form').addEventListener('submit', e => {
 });
 
 /* =====================================================================
-   PRODUCT SHOWCASE — realistic water-ripple campaign
-   · WebGL water surface: perspective ripples that never stop (a droplet lands every few
-     seconds), reflecting a per-product colour palette; the product is reflected in it.
-   · Products are real <img> layers above the water, so they stay perfectly sharp.
-   · Scroll scrubs every transition (droplet falls → product sinks → next one rises).
+   ELORIA BEAUTY — PRODUCT SHOWCASE
+   · Water: a real GPU height-field simulation (wave equation, damping, edge absorption) ping-ponged
+     between float textures. The render pass derives surface normals from it and applies Fresnel
+     reflection, a studio-light environment, glints and a reflection of the product.
+   · Droplet: a transparent, refractive bead drawn in the same shader (it bends the water behind it,
+     with rim darkening and highlights); a small rebound jet follows each impact.
+   · Products: sharp <img> layers moving on one scroll-scrubbed diagonal path:
+       bottom-right preview → main position → upper-left exit (scaling as they go).
+   Requires WebGL2 + float render targets; otherwise a lightweight CSS fallback is shown.
    ===================================================================== */
-const SC_PALETTES = {   // [deep water, mid water, warm light] — chosen to complement each pack
-  'serum-vince':    ['#04162b', '#1c5b8c', '#e8963f'],   // amber glass  → deep blue + copper light
-  'cream-jade':     ['#150e2c', '#4a3a86', '#f29aa8'],   // rose jar     → indigo water + rose light
-  'mask-oriflame':  ['#07131f', '#385a74', '#c6bfe6'],   // smoked grey  → slate water + silver-lilac
-  'cleanser-rose':  ['#061c2a', '#25748a', '#f4a3b2'],   // blush tube   → teal water + blush light
-  'mist-rose':      ['#081a36', '#2a52a0', '#ff7088'],   // red-pink mist→ navy water + coral light
-  'body-raspberry': ['#120e2e', '#43358f', '#e0557f'],   // raspberry    → violet-blue + raspberry light
-  'cream-dlirss':   ['#041f2e', '#12788a', '#ff9a3c'],   // gold/orange  → teal water + tangerine light
+const SC_PALETTES = {   // [dark ring tone, silver water, champagne light]
+  'serum-vince':    ['#2a313d', '#cdd4db', '#e6b985'],
+  'cream-jade':     ['#3a3036', '#ddd1d4', '#f2b6bd'],
+  'mask-oriflame':  ['#2a2e3a', '#c8cbd5', '#cdc4ea'],
+  'cleanser-rose':  ['#34303a', '#dccfd4', '#f4b3bf'],
+  'mist-rose':      ['#35303a', '#dcd0d6', '#f4a3b0'],
+  'body-raspberry': ['#372f3b', '#d9cfd7', '#e68ca8'],
+  'cream-dlirss':   ['#33323a', '#d9d4c9', '#f1b86e'],
 };
-const SC_VERT = `attribute vec2 aPos; void main(){ gl_Position = vec4(aPos,0.,1.); }`;
-const SC_FRAG = `
-precision highp float;
-uniform vec2 uRes, uO, uSink, uW;
-uniform float uTime, uHor, uK, uBase, uEvt, uEvtAmp, uDarkL, uDarkB, uStatic;
-uniform vec4 uRectA, uRectB;
-uniform vec3 uDeep, uMid, uWarm;
-uniform sampler2D uA, uB;
-const float P = 3.6;            // seconds between droplets
-const float PI2 = 6.2831853;
-float sq(float x){ return x*x; }
-float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1,311.7))) * 43758.5453); }
-float vnoise(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.-2.*f);
-  return mix(mix(hash(i), hash(i+vec2(1.,0.)), f.x), mix(hash(i+vec2(0.,1.)), hash(i+vec2(1.,1.)), f.x), f.y); }
-
-// one travelling wave packet -> (height, slope)
-vec2 packet(float r, float age, float amp, float lam, float c, float w0, float decay){
-  if(age <= 0.) return vec2(0.);
-  float R = c*age, w = w0 + .09*age, x = r - R;
-  float e = exp(-(x*x)/(w*w));
-  float a = amp * exp(-age*decay) / (1. + r*.4);
-  float k = PI2/lam, ph = k*x;
-  return vec2(a*e*cos(ph), a*e*(-k*sin(ph) - 2.*x/(w*w)*cos(ph)));
+const SC_TEXT = {       // charcoal type with an accent taken from each pack
+  'serum-vince': '#a8611f', 'cream-jade': '#b4505f', 'mask-oriflame': '#6c5f9a', 'cleanser-rose': '#b8566a',
+  'mist-rose': '#c23a52', 'body-raspberry': '#b32d5a', 'cream-dlirss': '#c4651a',
+};
+const SC_VERT = `#version 300 es
+in vec2 aPos; void main(){ gl_Position = vec4(aPos, 0., 1.); }`;
+const SC_SIM = `#version 300 es
+precision highp float; precision highp sampler2D;
+uniform sampler2D uS; uniform float uK, uDamp, uDx; uniform vec2 uDom; uniform vec4 uS0, uS1;
+out vec4 o;
+vec4 fch(ivec2 p, ivec2 sz){ return texelFetch(uS, clamp(p, ivec2(0), sz - 1), 0); }
+float src(vec4 s, vec2 pw){            // s = (x, z, age, amp): a droplet impact = short ring-train forcing
+  if(s.z < 0. || s.z > 1.3) return 0.;
+  vec2 d = pw - s.xy;
+  return s.w * exp(-dot(d, d) / .0113) * exp(-s.z / .30) * -sin(6.2831853 * 6.5 * s.z);
 }
-vec2 impact(float r, float age, float amp){
-  vec2 s = packet(r, age,      amp,      .31, .62, .22, .30);
-  s     += packet(r, age-.22,  amp*.66,  .26, .62, .20, .34);
-  s     += packet(r, age-.46,  amp*.44,  .22, .62, .18, .40);
-  s     += packet(r, age,      amp*.55,  .11, 1.05, .07, 1.4);   // fine, fast "crown" ring
-  return s;
+void main(){
+  ivec2 sz = textureSize(uS, 0), ip = ivec2(gl_FragCoord.xy);
+  vec4 c = fch(ip, sz);
+  float l = fch(ip + ivec2(-1, 0), sz).r, r = fch(ip + ivec2(1, 0), sz).r, d = fch(ip + ivec2(0, -1), sz).r, u = fch(ip + ivec2(0, 1), sz).r;
+  float e = float(min(min(ip.x, sz.x - 1 - ip.x), min(ip.y, sz.y - 1 - ip.y)));
+  float hn = (2. * c.r - c.g + uK * (l + r + d + u - 4. * c.r)) * mix(.9, uDamp, smoothstep(0., 28., e));
+  vec2 pw = uDom + (vec2(ip) + .5) * uDx;
+  hn += src(uS0, pw) + src(uS1, pw);
+  o = vec4(hn, c.r, (r - l) * .5 / uDx, (u - d) * .5 / uDx);
+}`;
+const SC_FRAG = `#version 300 es
+precision highp float; precision highp sampler2D;
+uniform vec2 uRes, uO, uW; uniform float uTime, uHor, uK, uBase, uDarkL, uDarkB, uStatic, uDx;
+uniform vec2 uDom; uniform vec4 uRectA, uRectB, uBead, uBead2;
+uniform vec3 uDeep, uMid, uWarm, uVeil;
+uniform sampler2D uA, uB, uSim;
+out vec4 fragColor;
+float sq(float x){ return x * x; }
+float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+float vnoise(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f);
+  return mix(mix(hash(i), hash(i + vec2(1., 0.)), f.x), mix(hash(i + vec2(0., 1.)), hash(i + vec2(1., 1.)), f.x), f.y); }
+vec4 simAt(vec2 w){                      // bilinear fetch of (height, prev, dh/dX, dh/dZ)
+  ivec2 sz = textureSize(uSim, 0); vec2 t = (w - uDom) / uDx - .5; ivec2 i0 = ivec2(floor(t)); vec2 f = fract(t);
+  ivec2 m = sz - 1;
+  vec4 a = texelFetch(uSim, clamp(i0, ivec2(0), m), 0), b = texelFetch(uSim, clamp(i0 + ivec2(1, 0), ivec2(0), m), 0);
+  vec4 c = texelFetch(uSim, clamp(i0 + ivec2(0, 1), ivec2(0), m), 0), d = texelFetch(uSim, clamp(i0 + ivec2(1, 1), ivec2(0), m), 0);
+  return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
 }
-vec4 prod(sampler2D tx, vec4 rc, float sink, vec2 q){
-  vec2 uv = vec2((q.x - rc.x)/rc.z, (q.y - (rc.y + sink))/rc.w);
-  if(uv.x < 0. || uv.x > 1. || uv.y < 0. || uv.y > 1.) return vec4(0.);
-  return texture2D(tx, uv);
-}
-vec3 envMap(vec3 R, float rip){
+vec3 envMap(vec3 R, float rip){          // soft studio: bright sky, dark flag bands, champagne strip light
   float e = clamp(R.y, 0., 1.);
-  vec3 hz = mix(uMid, uWarm, .10) * 1.15;
-  vec3 c = mix(hz, uDeep, pow(e, .55));
-  float az = atan(R.x, R.z);
-  c += uMid * .55 * exp(-sq((e-.20)/.18));
-  c += uWarm * 1.5 * exp(-sq((e-.46)/.034)) * smoothstep(-1.9,-.6,az) * (1. - smoothstep(.2,1.,az)) * mix(.12, 1., rip);
-  c += mix(uWarm, vec3(1.), .45) * .38 * exp(-sq((e-.73)/.03)) * smoothstep(-1.5,-.3,az) * mix(.1, 1., rip);
+  vec3 br = mix(uMid, vec3(1.), .55);
+  vec3 c = mix(br * .9, br * 1.04, smoothstep(0., .5, e));
+  c = mix(c, uDeep, .88 * exp(-sq((e - .62) / .13)));
+  c = mix(c, uDeep * .55, .75 * exp(-sq((e - .93) / .07)));
+  c += uWarm * .55 * exp(-sq((e - .40) / .05)) * smoothstep(-1.6, -.4, atan(R.x, R.z)) * mix(.1, 1., rip);
   return c;
+}
+vec3 waterAt(vec2 p, out vec3 nrm, out float fz){
+  float F = uRes.y;
+  vec3 haze = mix(uMid, vec3(1.), .5) * .97;
+  float kk = clamp(p.y / max(uHor, 1.), 0., 1.);
+  vec3 sky = mix(haze * .93, haze, kk) + (vnoise(vec2(p.x / uRes.y * 2.4 + uTime * .03, p.y / uRes.y * 7.)) - .4) * .05;
+  float dy = p.y - uHor, Z = F / max(dy, 3. * uK), X = (p.x - uRes.x * .5) * Z / F;
+  vec4 sm = simAt(vec2(X, Z));
+  fz = 1. - smoothstep(4.5, 9.5, Z);
+  vec2 sw = vec2(sin(X * 2.3 + uTime * .45 + sin(Z * 1.7 + uTime * .31) * 1.6), sin(Z * 2.1 - uTime * .38 + sin(X * 1.5 - uTime * .27) * 1.4)) * .016;
+  sw += vec2(sin(X * 7.3 - uTime * .9 + Z * 3.1), sin(Z * 6.1 + uTime * .8 + X * 2.7)) * .005;
+  sw *= .4 + .6 * fz;
+  nrm = normalize(vec3(-sm.b * fz + sw.x, 1., -sm.a * fz + sw.y));
+  vec3 V = normalize(vec3(X, -1., Z)), R = reflect(V, nrm);
+  float rip = smoothstep(.02, .3, length(sm.ba) * fz + length(sw));
+  float cosT = clamp(dot(-V, nrm), 0., 1.), Fr = .06 + .94 * pow(1. - cosT, 4.);
+  vec3 body = mix(uMid * .96, uDeep * .9, clamp(.1 + length(sm.ba) * fz * .9, 0., .7));
+  vec3 w = mix(body, envMap(R, rip), clamp(Fr * 1.7 + .3, 0., 1.));
+  vec3 L = normalize(vec3(-.4, .5, .75));
+  w += vec3(1.) * pow(max(dot(R, L), 0.), 420.) * 1.2 * mix(.2, 1., rip);
+  w = mix(w, haze, smoothstep(2.6, 9., Z));
+  return mix(sky, w, smoothstep(-6. * uK, 16. * uK, dy));
+}
+vec4 prod(sampler2D tx, vec4 rc, vec2 q){
+  vec2 uv = vec2((q.x - rc.x) / rc.z, (q.y - rc.y) / rc.w);
+  if(uv.x < 0. || uv.x > 1. || uv.y < 0. || uv.y > 1.) return vec4(0.);
+  return texture(tx, uv);
+}
+vec3 drop(vec4 b, vec2 p, vec3 base){      // transparent refractive droplet
+  if(b.z <= 0.) return base;
+  vec2 d = (p - b.xy) / (b.z * vec2(1., b.w)); float r2 = dot(d, d);
+  if(r2 > 1.1) return base;
+  float rr = sqrt(r2), nz = sqrt(max(1. - r2, 0.));
+  vec3 n = vec3(d, nz), nn; float ff;
+  vec3 refr = waterAt(b.xy - d * b.z * vec2(1., b.w) * 1.25, nn, ff);   // inverted, magnified image of what is behind
+  vec3 c = refr * (1. - .55 * pow(1. - nz, 1.4));
+  c = mix(c, uDeep * .7, .35 * pow(1. - nz, 3.));
+  vec3 L = normalize(vec3(-.5, -.65, .6));
+  c += vec3(1.) * pow(max(dot(reflect(vec3(0., 0., -1.), n), L), 0.), 70.) * 1.1;
+  c += vec3(1.) * .35 * smoothstep(.55, 1., dot(n, normalize(vec3(.5, .6, .62)))) * smoothstep(.2, .9, nz);   // internal caustic
+  c += uWarm * .25 * smoothstep(.82, .98, rr);
+  return mix(base, c, smoothstep(1.04, .94, rr));
 }
 void main(){
   vec2 p = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);
-  float F = uRes.y;
-  vec3 hazeCol = mix(uMid, uWarm, .08) * .92;
-
-  // ---- soft, out-of-focus far field (above / at the horizon) ----
-  vec2 g0 = p / uRes.y;
-  float kk = clamp(p.y / max(uHor, 1.), 0., 1.);
-  vec3 sky = mix(uDeep*.42, hazeCol, pow(smoothstep(0., 1., kk), 1.3));
-  sky += uMid * (vnoise(vec2(g0.x*2.6 + uTime*.03, g0.y*7.)) - .35) * .22 * (1. - kk*.6);
-  sky += uWarm * .10 * exp(-dot(g0 - vec2(.25,.12), g0 - vec2(.25,.12)) * 6.);
-
-  // ---- water plane (perspective) ----
-  float dy = p.y - uHor;
-  float Z = F / max(dy, 3.*uK);
-  float X = (p.x - uRes.x*.5) * Z / F;
-  float Z0 = F / max(uO.y - uHor, 3.*uK);
-  float X0 = (uO.x - uRes.x*.5) * Z0 / F;
-  vec2 dd = vec2(X - X0, Z - Z0);
-  float r = length(dd);
-  vec2 dir = dd / max(r, 1e-4);
-
-  vec2 s = vec2(0.);
-  float n0 = floor(uTime / P);
-  for(int i = 0; i < 3; i++){
-    float n = n0 - float(i);
-    s += impact(r, uTime - n*P, .0165 * (.85 + .3*hash(vec2(n, 7.))));
-  }
-  if(uEvt >= 0.) s += impact(r, uEvt, .0165 * uEvtAmp);
-  float fz = 1. - smoothstep(4.5, 10., Z);
-  vec2 sw = vec2(sin(X*2.3 + uTime*.45 + sin(Z*1.7 + uTime*.31)*1.6), sin(Z*2.1 - uTime*.38 + sin(X*1.5 - uTime*.27)*1.4)) * .020;
-  sw += vec2(sin(X*7.3 - uTime*.9 + Z*3.1), sin(Z*6.1 + uTime*.8 + X*2.7)) * .007;
-  sw *= .4 + .6*fz;
-  vec3 nrm = normalize(vec3(-s.y*dir.x*fz + sw.x, 1., -s.y*dir.y*fz + sw.y));
-  vec3 V = normalize(vec3(X, -1., Z));
-  vec3 R = reflect(V, nrm);
-  float hgt = s.x * fz;
-
-  float cosT = clamp(dot(-V, nrm), 0., 1.);
-  float Fr = .06 + .94*pow(1. - cosT, 4.);
-  vec3 body = mix(uDeep*.9, uMid*.85, clamp(.35 + hgt*28., 0., 1.));
-  float rip = smoothstep(.015, .22, abs(s.y)*fz + length(sw));
-  vec3 water = mix(body, envMap(R, rip), clamp(Fr*1.7, 0., 1.));
-  vec3 L = normalize(vec3(-.4, .5, .75));
-  water += mix(uWarm, vec3(1.), .5) * pow(max(dot(R, L), 0.), 420.) * 1.1 * mix(.25, 1., rip);
-  water += uMid * 1.3 * smoothstep(.3, 1., hgt*26.) * .16;
-  water = mix(water, hazeCol, smoothstep(2.6, 9., Z));
-
-  vec3 col = mix(sky, water, smoothstep(-6.*uK, 16.*uK, dy));
-
-  // ---- light pool + contact shadow + product reflection ----
+  vec3 nrm; float fz;
+  vec3 col = waterAt(p, nrm, fz);
   float wsum = clamp(uW.x + uW.y, 0., 1.);
-  float cx = uRectA.x + uRectA.z*.5;
-  float pw = mix(uRectA.z, uRectB.z, uW.y/max(uW.x+uW.y, .001));
-  float ph = mix(uRectA.w, uRectB.w, uW.y/max(uW.x+uW.y, .001));
-  col += uWarm * .15 * wsum * exp(-sq((p.x - cx)/(pw*.9 + 80.*uK)) - sq((p.y - (uBase - ph*.1))/(ph*.55)));
-  col *= 1. - .42 * wsum * exp(-sq((p.x - cx)/(pw*.5)) - sq((p.y - uBase - 6.*uK)/(10.*uK)));
-
+  float cx = mix(uRectA.x + uRectA.z * .5, uRectB.x + uRectB.z * .5, uW.y / max(uW.x + uW.y, .001));
+  float pw = mix(uRectA.z, uRectB.z, uW.y / max(uW.x + uW.y, .001));
+  col *= 1. - .30 * wsum * exp(-sq((p.x - cx) / (pw * .5)) - sq((p.y - uBase - 6. * uK) / (10. * uK)));
   float d = p.y - uBase;
   if(d > 0.){
-    vec2 off = nrm.xz * 90. * uK * fz;
-    vec2 qr = vec2(p.x + off.x, 2.*uBase - p.y + off.y);
-    float sp = (2. + d*.03) * uK;
-    vec4 ra = (prod(uA,uRectA,uSink.x,qr) + prod(uA,uRectA,uSink.x,qr+vec2(sp,0.)) + prod(uA,uRectA,uSink.x,qr-vec2(sp,0.))) / 3. * uW.x;
-    vec4 rb = (prod(uB,uRectB,uSink.y,qr) + prod(uB,uRectB,uSink.y,qr+vec2(sp,0.)) + prod(uB,uRectB,uSink.y,qr-vec2(sp,0.))) / 3. * uW.y;
-    vec4 rr = ra + rb;
-    rr.rgb = mix(rr.rgb, uMid*rr.a, .25);
-    float fade = (1. - smoothstep(0., ph*.46, d)) * .55;
-    col = col*(1. - rr.a*fade) + rr.rgb*fade;
+    vec2 qr = vec2(p.x + nrm.x * 110. * uK * fz, 2. * uBase - p.y + nrm.z * 110. * uK * fz);
+    float sp = (2. + d * .03) * uK;
+    vec4 ra = (prod(uA, uRectA, qr) + prod(uA, uRectA, qr + vec2(sp, 0.)) + prod(uA, uRectA, qr - vec2(sp, 0.))) / 3. * uW.x;
+    vec4 rb = (prod(uB, uRectB, qr) + prod(uB, uRectB, qr + vec2(sp, 0.)) + prod(uB, uRectB, qr - vec2(sp, 0.))) / 3. * uW.y;
+    vec4 rr = ra + rb; rr.rgb = mix(rr.rgb, uMid * rr.a, .2);
+    float fade = (1. - smoothstep(0., (uRectA.w + uRectB.w) * .25, d)) * .5;
+    col = col * (1. - rr.a * fade) + rr.rgb * fade;
   }
-
-  // ---- text-side shading + finish ----
-  float lm = smoothstep(.56, -.05, p.x/uRes.x) * uDarkL;
-  float bm = smoothstep(.62, 1.05, p.y/uRes.y) * uDarkB;
-  col = mix(col, uDeep*.55, clamp(lm*.62 + bm*.7, 0., .85));
-  vec2 vv = p/uRes - .5;
-  col *= 1. - .32*pow(length(vv*vec2(1.1,1.)), 2.4);
-  col += (hash(p + fract(uTime)*91.) - .5) * .02 * (1. - uStatic);
-  gl_FragColor = vec4(col, 1.);
+  col = drop(uBead, p, col); col = drop(uBead2, p, col);
+  float lm = smoothstep(.55, -.05, p.x / uRes.x) * uDarkL + smoothstep(.62, 1.05, p.y / uRes.y) * uDarkB;
+  col = mix(col, uVeil, clamp(lm * .5, 0., .6));
+  vec2 vv = p / uRes - .5; col *= 1. - .14 * pow(length(vv * vec2(1.1, 1.)), 2.4);
+  col += (hash(p + fract(uTime) * 91.) - .5) * .014 * (1. - uStatic);
+  fragColor = vec4(col, 1.);
 }`;
 
 const Showcase = (() => {
   const el = $('#showcase'), pin = $('#sc-pin'), canvas = $('#sc-canvas'), copy = $('#sc-copy'), fb = $('#sc-fallback');
-  const stage = $('#sc-stage'), bead = $('#sc-bead'), peekR = $('#sc-peek-r'), peekL = $('#sc-peek-l');
+  const stage = $('#sc-stage'), peek = $('#sc-peek');
   const items = CONFIG.featured.map(id => PRODUCT_MAP[id]).filter(p => p && p.cutout);
   const N = items.length;
   if (!N) { el.hidden = true; return { refresh() {}, sync() {} }; }
   el.style.setProperty('--steps', String(N - 1));
 
   const TX = window.AQSA_SHOWCASE_TEX || {};
-  const PERIOD = 3.6, FALL = .62, WRAP = 360, STATIC_T = 1.1;
-  const hex = hx => [1, 3, 5].map(i => parseInt(hx.slice(i, i + 2), 16) / 255);
+  const PERIOD = 3.6, FALL = .62, WRAP = 3600, SIM = 512, DOMW = 9, DX = DOMW / SIM, DZ0 = 1.0, DX0 = -DOMW / 2, STEP = 1 / 60;
   const mixv = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t);
+  const hex = hx => [1, 3, 5].map(i => parseInt(hx.slice(i, i + 2), 16) / 255);
   const smooth = (a, b, x) => { x = clamp((x - a) / (b - a), 0, 1); return x * x * (3 - 2 * x); };
+  const lerp = (a, b, t) => a + (b - a) * t;
   const pad = n => String(n).padStart(2, '0');
-  const pal = items.map(p => (SC_PALETTES[p.id] || ['#04162b', '#1c5b8c', p.glow || '#e8963f']).map(hex));
+  const pal = items.map(p => (SC_PALETTES[p.id] || ['#2a313d', '#cdd4db', '#e6b985']).map(hex));
   const aspect = items.map(p => TX[p.id] ? TX[p.id].w / TX[p.id].h : (p.cw && p.ch ? p.cw / p.ch : 1));
 
-  let mode = 'init', gl = null, U = {}, texs = [], lay = null, rects = [], S = 1, quality = 1;
-  let visible = false, raf = 0, last = 0, ema = .016, slow = 0;
-  let target = 0, disp = 0, dir = 1, cur = -1, evtT0 = -1e9, st = null;
-  let started = false;
+  let mode = 'init', gl = null, U = {}, US = {}, texs = [], simT = [], simF = [], si = 0, simSteps = 0, simAcc = 0, srcs = [null, null], srcI = 0;
+  let lay = null, rects = [], prev = null, S = 1, quality = 1, visible = false, raf = 0, last = 0, ema = .016, slow = 0, started = false;
+  let target = 0, disp = 0, dir = 1, cur = -1, lastAmb = -1, lastImpactT = -1e9, st = null;
 
-  /* ---------- DOM: product layers, corner previews, hud ---------- */
-  const imgs = items.map(p => {
-    const t = TX[p.id], im = h('img', { class: 'sc-prod', src: t ? t.uri : p.cutout, alt: '', decoding: 'async', draggable: 'false' });
-    const w = pal[items.indexOf(p)][2].map(v => Math.round(v * 255));
-    im.style.setProperty('--glow', `rgba(${w[0]},${w[1]},${w[2]},.28)`);
-    stage.append(im); return im;
-  });
-  const mkPeek = (host, label) => items.map((p, k) => {
-    const b = h('button', { class: 'sc-pk', type: 'button', tabindex: '-1', 'aria-label': `${label}: ${p.name}`, onclick: () => scrollToStage(k) },
-      h('img', { src: TX[p.id] ? TX[p.id].uri : p.cutout, alt: '', decoding: 'async', draggable: 'false' }),
-      h('small', { text: `${pad(k + 1)} · ${CAT[p.category].label}` }));
-    host.append(b); return b;
-  });
-  const pkR = mkPeek(peekR, 'Next'), pkL = mkPeek(peekL, 'Then');
+  /* ---------- DOM ---------- */
+  const imgs = items.map(p => { const t = TX[p.id], im = h('img', { class: 'sc-prod', src: t ? t.uri : p.cutout, alt: '', decoding: 'async', draggable: 'false' }); stage.append(im); return im; });
   const ticks = $('#sc-ticks');
   items.forEach((p, i) => ticks.append(h('button', { class: 'sc-tick', type: 'button', 'aria-label': `Show product ${i + 1}: ${p.name}`, 'aria-current': 'false', onclick: () => scrollToStage(i) }, h('i'))));
   $('#sc-prev').addEventListener('click', () => scrollToStage(cur - 1));
   $('#sc-next').addEventListener('click', () => scrollToStage(cur + 1));
+  peek.addEventListener('click', () => scrollToStage(cur + 1));
   $('#sc-add').addEventListener('click', () => { const p = items[cur]; if (p) { Store.add(p.id); toast('Added to your bag — ' + p.name); } });
   $('#sc-wish').addEventListener('click', () => { const p = items[cur]; if (p) toast(Store.toggle(p.id) ? 'Saved to wishlist' : 'Removed from wishlist'); });
 
@@ -1427,9 +1402,11 @@ const Showcase = (() => {
     $('#sc-title').textContent = p.name; $('#sc-brand').textContent = [p.brand, p.format].filter(Boolean).join(' · ');
     $('#sc-tag').textContent = p.tagline || ''; $('#sc-price').textContent = money(p.price);
     $('#sc-view').setAttribute('href', '#/product/' + p.id); $('#sc-view').setAttribute('aria-label', 'View details: ' + p.name);
-    const lt = mixv(pal[i][2], [1, 1, 1], .25).map(v => Math.round(v * 255));
-    copy.style.setProperty('--acc', `rgb(${lt[0]},${lt[1]},${lt[2]})`);
-    const wm = pal[i][2].map(v => Math.round(v * 255)); bead.style.setProperty('--bead', `rgb(${Math.min(255, wm[0] + 40)},${Math.min(255, wm[1] + 60)},${Math.min(255, wm[2] + 70)})`);
+    const acc = SC_TEXT[p.id] || '#a8611f';
+    pin.style.setProperty('--acc', acc); pin.style.setProperty('--acc-line', acc + '88');
+    const nx = items[i + 1];
+    peek.hidden = !nx;
+    if (nx) { $('#sc-peek-cap').textContent = `Next · ${pad(i + 2)}`; peek.setAttribute('aria-label', 'Next product: ' + nx.name); }
     sync();
   }
   function sync() {
@@ -1446,20 +1423,28 @@ const Showcase = (() => {
 
   /* ---------- layout ---------- */
   function layout() {
-    const w = pin.clientWidth, hh = pin.clientHeight;
-    if (!w || !hh) return;
-    const desktop = w >= 900 && w / hh >= 1.0;
+    const pw = pin.clientWidth, ph = pin.clientHeight;
+    if (!pw || !ph) return;
+    const desktop = pw >= 900 && pw / ph >= 1.0;
     el.classList.toggle('is-stacked', !desktop);
-    let slotW, slotH, cx, base, hor;
-    if (desktop) { slotW = Math.min(.33 * w, 580); slotH = .56 * hh; cx = .70 * w; base = .715 * hh; hor = .30 * hh; }
-    else { slotW = Math.min(.78 * w, 440); slotH = Math.min(.34 * hh, 330); const top = Math.max(.115 * hh, 86); cx = .5 * w; base = top + slotH; hor = .2 * hh; pin.style.setProperty('--peek-y', (base - slotH * .42) + 'px'); }
+    const w = pw, hh = ph;
+    let slotW, slotH, cx, base, hor, ox, pvH, pvAx, pvAy;
+    if (desktop) {
+      slotW = Math.min(.34 * w, 560); slotH = .58 * hh; cx = .73 * w; base = .745 * hh; hor = .28 * hh; ox = .47 * w;
+      pvH = clamp(.2 * hh, 120, 190); pvAx = w - 30 - 70; pvAy = hh - 66;
+    } else {
+      slotW = Math.min(.78 * w, 440); slotH = Math.min(.34 * hh, 330); const top = Math.max(.115 * hh, 86); cx = .5 * w; base = top + slotH; hor = .2 * hh; ox = .27 * w;
+      pvH = clamp(.11 * hh, 70, 110); pvAx = w - 14 - 44; pvAy = base + .005 * hh;
+    }
     rects = items.map((p, i) => {
       const asp = aspect[i], wmax = slotW * (asp > 1.5 ? 1.2 : 1);
       let W, H; if (asp > wmax / slotH) { W = wmax; H = wmax / asp; } else { H = slotH; W = slotH * asp; }
-      return { x: cx - W / 2, y: base - H, w: W, h: H };
+      return { x: cx - W / 2, y: base - H, w: W, h: H, s1: Math.min(pvH / H, 110 / W) };
     });
-    imgs.forEach((im, i) => { const r = rects[i]; Object.assign(im.style, { left: r.x + 'px', top: r.y + 'px', width: r.w + 'px', height: r.h + 'px' }); im._o = im._t = null; });
-    lay = { w, hh, desktop, cx, base, hor, ox: cx, oy: base + (desktop ? .06 : .035) * hh };
+    imgs.forEach((im, i) => { const r = rects[i]; Object.assign(im.style, { left: r.x + 'px', top: r.y + 'px', width: r.w + 'px', height: r.h + 'px' }); im._t = im._o = null; });
+    pin.style.setProperty('--peek-y', (pvAy + 4) + 'px');
+    prev = { ax: pvAx, ay: pvAy, ulx: cx - (desktop ? .46 * w : .42 * w), uly: base - slotH * .8 };
+    lay = { w, hh, desktop, cx, base, hor, ox, oy: base + .012 * hh };
     if (mode === 'gl') resizeCanvas();
     else fb.querySelectorAll('.ring').forEach(r => { const rw = Math.min(w * .9, 900); Object.assign(r.style, { left: lay.ox - rw / 2 + 'px', top: lay.oy - rw * .14 + 'px', width: rw + 'px', height: rw * .28 + 'px' }); });
     wake();
@@ -1471,116 +1456,127 @@ const Showcase = (() => {
     gl.viewport(0, 0, canvas.width, canvas.height); S = canvas.width / lay.w;
   }
 
-  /* ---------- WebGL ---------- */
+  /* ---------- WebGL2 + simulation ---------- */
   function compile(type, src) { const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) throw new Error(gl.getShaderInfoLog(s)); return s; }
+  function program(fs) {
+    const p = gl.createProgram(); gl.attachShader(p, compile(gl.VERTEX_SHADER, SC_VERT)); gl.attachShader(p, compile(gl.FRAGMENT_SHADER, fs));
+    gl.bindAttribLocation(p, 0, 'aPos'); gl.linkProgram(p); if (!gl.getProgramParameter(p, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(p)); return p;
+  }
+  const locs = (p, names) => { const o = {}; names.forEach(n => o[n] = gl.getUniformLocation(p, n)); return o; };
   function loadImg(src) { return new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = src; }); }
   async function initGL() {
-    const opts = { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: 'high-performance' };
-    gl = canvas.getContext('webgl2', opts) || canvas.getContext('webgl', opts);
-    if (!gl) throw new Error('no webgl');
-    const prog = gl.createProgram();
-    gl.attachShader(prog, compile(gl.VERTEX_SHADER, SC_VERT)); gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, SC_FRAG));
-    gl.linkProgram(prog); if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
-    gl.useProgram(prog);
+    gl = canvas.getContext('webgl2', { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: 'high-performance' });
+    if (!gl || !gl.getExtension('EXT_color_buffer_float')) throw new Error('WebGL2 float render targets unavailable');
     const buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
-    const loc = gl.getAttribLocation(prog, 'aPos'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
-    ['uRes', 'uO', 'uSink', 'uW', 'uTime', 'uHor', 'uK', 'uBase', 'uEvt', 'uEvtAmp', 'uDarkL', 'uDarkB', 'uStatic', 'uRectA', 'uRectB', 'uDeep', 'uMid', 'uWarm', 'uA', 'uB'].forEach(n => U[n] = gl.getUniformLocation(prog, n));
-    const isGL2 = typeof WebGL2RenderingContext !== 'undefined' && gl instanceof WebGL2RenderingContext;
+    gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
+    const pSim = program(SC_SIM), pMain = program(SC_FRAG);
+    US = locs(pSim, ['uS', 'uK', 'uDamp', 'uDx', 'uDom', 'uS0', 'uS1']); US.p = pSim;
+    U = locs(pMain, ['uRes', 'uO', 'uW', 'uTime', 'uHor', 'uK', 'uBase', 'uDarkL', 'uDarkB', 'uStatic', 'uDx', 'uDom', 'uRectA', 'uRectB', 'uBead', 'uBead2', 'uDeep', 'uMid', 'uWarm', 'uVeil', 'uA', 'uB', 'uSim']); U.p = pMain;
+    for (let i = 0; i < 2; i++) {
+      const t = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, t);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA32F, SIM, SIM, 0, gl.RGBA, gl.FLOAT, new Float32Array(SIM * SIM * 4));
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      const f = gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER, f); gl.framebufferTexture2D(gl.FRAMEBUFFER, gl.COLOR_ATTACHMENT0, gl.TEXTURE_2D, t, 0);
+      if (gl.checkFramebufferStatus(gl.FRAMEBUFFER) !== gl.FRAMEBUFFER_COMPLETE) throw new Error('float framebuffer incomplete');
+      simT.push(t); simF.push(f);
+    }
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     const ims = await Promise.all(items.map(p => loadImg(TX[p.id] ? TX[p.id].uri : p.cutout)));
     gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, true);
     ims.forEach(im => {
       const t = gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D, t);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, im);
       gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-      if (isGL2) { gl.generateMipmap(gl.TEXTURE_2D); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR); } else gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+      gl.generateMipmap(gl.TEXTURE_2D); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
       texs.push(t);
     });
-    gl.uniform1i(U.uA, 0); gl.uniform1i(U.uB, 1);
     canvas.addEventListener('webglcontextlost', e => { e.preventDefault(); useFallback(); });
   }
   function useFallback() {
     if (mode === 'fallback') return;
     mode = 'fallback'; el.classList.add('is-fallback'); cancelAnimationFrame(raf); raf = 0; gl = null; layout();
   }
+  const worldOf = (px, py) => { const F = lay.hh, Z = F / Math.max(py - lay.hor, 3), X = (px - lay.w / 2) * Z / F; return [X, Z]; };
+  function impact(time, amp) {       // a droplet lands at the ripple origin
+    const [x, z] = worldOf(lay.ox, lay.oy);
+    srcs[srcI] = { x, z, t0: simSteps * STEP, amp }; srcI ^= 1; lastImpactT = time;
+  }
+  function simStep() {
+    gl.useProgram(US.p); gl.bindFramebuffer(gl.FRAMEBUFFER, simF[si ^ 1]); gl.viewport(0, 0, SIM, SIM);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, simT[si]); gl.uniform1i(US.uS, 0);
+    gl.uniform1f(US.uK, .34); gl.uniform1f(US.uDamp, .9988); gl.uniform1f(US.uDx, DX); gl.uniform2f(US.uDom, DX0, DZ0);
+    const tnow = simSteps * STEP;
+    [US.uS0, US.uS1].forEach((u, k) => { const s = srcs[k]; gl.uniform4f(u, s ? s.x : 0, s ? s.z : 0, s ? tnow - s.t0 : -1, s ? s.amp * .014 : 0); });
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); si ^= 1; simSteps++;
+  }
 
-  /* ---------- per-frame update (DOM + water) ---------- */
-  function setProd(im, o, y, s) {
-    const ko = o.toFixed(3), kt = `translate3d(0,${y.toFixed(1)}px,0) scale(${s.toFixed(4)})`;
+  /* ---------- sprite motion: preview (d=1) → main (d=0) → upper-left exit (d=-1) ---------- */
+  function pose(k, f) {
+    const d = k - f, r = rects[k], mainX = lay.cx, mainY = lay.base;
+    let ax, ay, s, o;
+    if (d >= 0 && d <= 1) { const u = smooth(0, 1, d); ax = lerp(mainX, prev.ax, u); ay = lerp(mainY, prev.ay, u); s = lerp(1, r.s1, u); o = lerp(1, .96, u); }
+    else if (d > 1) { const u = smooth(1, 2, d); ax = lerp(prev.ax, lay.w + 60, u); ay = lerp(prev.ay, lay.hh + 70, u); s = lerp(r.s1, r.s1 * .55, u); o = lerp(.96, 0, smooth(1, 1.85, d)); }
+    else { const u = smooth(0, 1, -d); ax = lerp(mainX, prev.ulx, u); ay = lerp(mainY, prev.uly, u); s = lerp(1, .34, u); o = 1 - smooth(.35, 1, -d); }
+    return { ax, ay, s, o, d };
+  }
+  function setProd(im, ps) {
+    const ko = ps.o.toFixed(3), kt = `translate3d(${(ps.ax - lay.cx).toFixed(1)}px,${(ps.ay - lay.base).toFixed(1)}px,0) scale(${ps.s.toFixed(4)})`;
     if (im._o !== ko) { im.style.opacity = ko; im._o = ko; }
     if (im._t !== kt) { im.style.transform = kt; im._t = kt; }
+    const z = String(Math.round(100 - Math.abs(ps.d) * 10)); if (im._z !== z) { im.style.zIndex = z; im._z = z; }
   }
-  function setPeek(b, op, scl) {
-    const o = op * .78, k = o.toFixed(3) + '|' + scl.toFixed(3);
-    if (b._k === k) return; b._k = k;
-    b.style.opacity = o.toFixed(3); b.style.visibility = op < .02 ? 'hidden' : 'visible';
-    b.style.transform = `translate3d(0,${((1 - op) * 12).toFixed(1)}px,0) scale(${scl.toFixed(3)})`;
-    b.tabIndex = op > .55 ? 0 : -1; b.style.pointerEvents = op > .4 ? 'auto' : 'none';
-  }
-  function update(f, time) {
-    const i = clamp(Math.floor(f), 0, N - 1), t = i >= N - 1 ? 0 : clamp(f - i, 0, 1);
-    const lv = 1 - smooth(.16, .62, t), ar = smooth(.38, .84, t), hasB = i + 1 < N;
-    const reduced = REDUCED.matches;
+  const spriteRect = (k, ps) => { const r = rects[k], w = r.w * ps.s, hgt = r.h * ps.s; return [ps.ax - w / 2, ps.ay - hgt, w, hgt]; };
 
-    // current stage → text, hud, ripple event
+  /* ---------- per-frame update ---------- */
+  function update(f, time) {
+    const i = clamp(Math.floor(f), 0, N - 1), t = i >= N - 1 ? 0 : clamp(f - i, 0, 1), hasB = i + 1 < N;
+    const reduced = REDUCED.matches, moving = t > .04 && t < .96 && hasB;
+
     const c = clamp(Math.round(f), 0, N - 1);
-    if (c !== cur) {
-      const first = cur < 0; cur = c; fillText(c); hud(c);
-      if (!first && !reduced && mode === 'gl') evtT0 = time;
-    }
-    const dd = Math.abs(f - cur), op = 1 - smooth(.14, .46, dd);
+    if (c !== cur) { const first = cur < 0; cur = c; fillText(c); hud(c); if (!first && mode === 'gl' && !reduced) impact(time, 1.25); }
+    const dd = Math.abs(f - cur), op = 1 - smooth(.14, .42, dd);
     copy.style.opacity = op.toFixed(3);
     copy.style.setProperty('--cy', ((f > cur ? -1 : 1) * (1 - op) * 18).toFixed(1) + 'px');
     copy.style.pointerEvents = op > .6 ? '' : 'none';
+    const pk = clamp(1 - Math.abs(f - cur) * 2.2, 0, 1) * (cur < N - 1 ? 1 : 0); peek.style.opacity = pk.toFixed(3); peek.style.pointerEvents = pk > .5 ? 'auto' : 'none';
 
-    // products
-    imgs.forEach((im, k) => {
-      if (k === i) setProd(im, lv, (1 - lv) * 26, 1 - (1 - lv) * .035);
-      else if (k === i + 1) setProd(im, ar, (1 - ar) * 40, .965 + .035 * ar);
-      else setProd(im, 0, 0, 1);
-    });
+    if (!lay) return;
+    const poses = imgs.map((im, k) => { const ps = pose(k, f); setProd(im, ps); return ps; });
+    if (mode !== 'gl') return;
 
-    // corner previews (progressive: Next → fades up as it approaches, Then → follows)
-    for (let k = 0; k < N; k++) {
-      const d = k - f; let oR = 0, oL = 0;
-      if (d > 0) {
-        oR = d >= 1 ? clamp((1.6 - d) / .6, 0, 1) : clamp((d - .35) / .65, 0, 1);
-        oL = d >= 2 ? clamp((2.6 - d) / .6, 0, 1) : clamp((d - 1.5) / .5, 0, 1);
-      }
-      setPeek(pkR[k], oR, .86 + .14 * oR); setPeek(pkL[k], oL, .8 + .2 * oL);
+    // ambient droplets while a product is resting
+    if (!reduced) { const n = Math.floor(time / PERIOD); if (n !== lastAmb) { if (lastAmb >= 0 && !moving) impact(time, 1); lastAmb = n; } }
+    // droplet position (canvas px): scroll-scrubbed while products move, otherwise on the water's own rhythm
+    let bead = [0, 0, 0, 1], bead2 = [0, 0, 0, 1];
+    const rad = 11 * (canvas.height / 900), top = -24;
+    if (!reduced) {
+      let q = -1;
+      if (moving) { q = dir >= 0 ? (t - .1) / .4 : (.9 - t) / .4; }
+      else { const tau = PERIOD - (time % PERIOD); if (tau < FALL) q = 1 - tau / FALL; }
+      if (q > 0 && q < 1) bead = [lay.ox * S, (top + (lay.oy - 6 - top) * q * q) * S, rad, 1.22];
+      const ja = time - lastImpactT;
+      if (ja > .07 && ja < .8) { const u = (ja - .07) / .73; bead2 = [lay.ox * S, (lay.oy - Math.sin(Math.PI * u) * 46 * (lay.hh / 900) - 4) * S, rad * .5 * (1 - .3 * u), 1.15]; }
     }
-
-    // droplet (DOM, above the product): scroll-scrubbed while changing product, otherwise on the water's own rhythm
-    let by = -1e9, bq = 0;
-    if (mode === 'gl' && !reduced && lay) {
-      if (t > .08 && t < .92 && hasB) {
-        const q = dir >= 0 ? (t - .08) / .42 : (.92 - t) / .42;
-        if (q > 0 && q < 1) { bq = q; by = -30 + (lay.oy - 10 + 30) * q * q; }
-      } else {
-        const tau = PERIOD - (time % PERIOD);
-        if (tau < FALL) { bq = 1 - tau / FALL; by = -30 + (lay.oy - 10 + 30) * bq * bq; }
-      }
-    }
-    if (by > -1e8) { bead.style.opacity = '1'; bead.style.transform = `translate3d(${(lay.ox - 6.5).toFixed(1)}px,${by.toFixed(1)}px,0) scaleY(${(1 + bq * .3).toFixed(3)})`; }
-    else if (bead.style.opacity !== '0') bead.style.opacity = '0';
 
     // water uniforms
-    if (mode !== 'gl' || !lay) return;
-    const B = hasB ? i + 1 : i, k0 = smooth(.3, .9, t), wB = hasB ? ar : 0;
+    const B = hasB ? i + 1 : i, k0 = smooth(.3, .9, t);
     const dk = mixv(pal[i][0], pal[B][0], k0), md = mixv(pal[i][1], pal[B][1], k0), wm = mixv(pal[i][2], pal[B][2], k0);
-    const ra = rects[i], rb = rects[B], K = canvas.height / 900;
-    gl.uniform2f(U.uRes, canvas.width, canvas.height); gl.uniform1f(U.uK, K);
-    gl.uniform1f(U.uTime, reduced ? STATIC_T : time % WRAP);
+    const pa = poses[i], pb = poses[B], ra = spriteRect(i, pa), rb = spriteRect(B, pb), K = canvas.height / 900;
+    const wA = pa.o * smooth(1, .15, Math.abs(pa.d)), wB = hasB ? pb.o * smooth(1, .15, Math.abs(pb.d)) : 0;
+    gl.bindFramebuffer(gl.FRAMEBUFFER, null); gl.viewport(0, 0, canvas.width, canvas.height); gl.useProgram(U.p);
+    gl.uniform2f(U.uRes, canvas.width, canvas.height); gl.uniform1f(U.uK, K); gl.uniform1f(U.uDx, DX); gl.uniform2f(U.uDom, DX0, DZ0);
+    gl.uniform1f(U.uTime, reduced ? 1.1 : time % WRAP);
     gl.uniform1f(U.uHor, lay.hor * S); gl.uniform1f(U.uBase, lay.base * S);
-    gl.uniform2f(U.uO, lay.ox * S, lay.oy * S);
-    gl.uniform4f(U.uRectA, ra.x * S, ra.y * S, ra.w * S, ra.h * S); gl.uniform4f(U.uRectB, rb.x * S, rb.y * S, rb.w * S, rb.h * S);
-    gl.uniform2f(U.uW, lv, wB); gl.uniform2f(U.uSink, (1 - lv) * 26 * S, (1 - ar) * 40 * S);
-    const age = time - evtT0; gl.uniform1f(U.uEvt, age >= 0 && age < 9 && !reduced ? age : -1); gl.uniform1f(U.uEvtAmp, 1.15);
+    gl.uniform4f(U.uRectA, ra[0] * S, ra[1] * S, ra[2] * S, ra[3] * S); gl.uniform4f(U.uRectB, rb[0] * S, rb[1] * S, rb[2] * S, rb[3] * S);
+    gl.uniform2f(U.uW, wA, wB); gl.uniform4f(U.uBead, ...bead); gl.uniform4f(U.uBead2, ...bead2);
     gl.uniform1f(U.uDarkL, lay.desktop ? 1 : 0); gl.uniform1f(U.uDarkB, lay.desktop ? 0 : 1); gl.uniform1f(U.uStatic, reduced ? 1 : 0);
     gl.uniform3f(U.uDeep, dk[0], dk[1], dk[2]); gl.uniform3f(U.uMid, md[0], md[1], md[2]); gl.uniform3f(U.uWarm, wm[0], wm[1], wm[2]);
-    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, texs[i]);
-    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, texs[B]);
+    const vl = mixv(md, [1, 1, 1], .65); gl.uniform3f(U.uVeil, vl[0], vl[1], vl[2]);
+    gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, texs[i]); gl.uniform1i(U.uA, 0);
+    gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D, texs[B]); gl.uniform1i(U.uB, 1);
+    gl.activeTexture(gl.TEXTURE2); gl.bindTexture(gl.TEXTURE_2D, simT[si]); gl.uniform1i(U.uSim, 2);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
   }
 
@@ -1589,9 +1585,10 @@ const Showcase = (() => {
     raf = 0;
     if (!visible || document.hidden || !lay) return;
     const dt = Math.min(.1, (now - last) / 1000 || .016); last = now;
-    disp += (target - disp) * (1 - Math.exp(-dt * 8)); if (Math.abs(target - disp) < 5e-4) disp = target;
+    disp += (target - disp) * (1 - Math.exp(-dt * 6)); if (Math.abs(target - disp) < 5e-4) disp = target;
+    if (mode === 'gl' && !REDUCED.matches) { simAcc = Math.min(simAcc + dt / STEP, 3); while (simAcc >= 1) { simStep(); simAcc -= 1; } }
     update(disp, now / 1000);
-    if (mode === 'gl' && !REDUCED.matches) {          // adaptive quality keeps scrolling smooth on slower GPUs
+    if (mode === 'gl' && !REDUCED.matches) {           // adaptive quality keeps scrolling smooth on slower GPUs
       ema = ema * .93 + dt * .07; slow = ema > .03 ? slow + 1 : Math.max(0, slow - 2);
       if (slow > 50 && quality > .55) { quality = Math.max(.55, quality * .82); slow = 0; resizeCanvas(); }
     }
@@ -1600,10 +1597,7 @@ const Showcase = (() => {
   function wake() { if (visible && !raf && !document.hidden && lay) { last = performance.now(); raf = requestAnimationFrame(frame); } }
 
   /* ---------- scroll drivers ---------- */
-  function stageY(k) {
-    const total = el.offsetHeight - pin.offsetHeight, top = window.scrollY + el.getBoundingClientRect().top;
-    return top + (total * clamp(k, 0, N - 1)) / Math.max(1, N - 1);
-  }
+  function stageY(k) { const total = el.offsetHeight - pin.offsetHeight, top = window.scrollY + el.getBoundingClientRect().top; return top + (total * clamp(k, 0, N - 1)) / Math.max(1, N - 1); }
   function scrollToStage(k) { k = clamp(k, 0, N - 1); window.scrollTo({ top: stageY(k), behavior: REDUCED.matches ? 'auto' : 'smooth' }); }
   function onProgress(p) {
     const nt = p * (N - 1); if (nt !== target) dir = Math.sign(nt - target) || dir; target = nt;
@@ -1623,9 +1617,9 @@ const Showcase = (() => {
       st = ScrollTrigger.create({
         trigger: el, start: 'top top', end: 'bottom bottom',
         onUpdate: s => onProgress(s.progress), onRefresh: s => onProgress(s.progress),
-        snap: snapOn ? { snapTo: (v, self) => snapTarget(v, self ? self.direction : 0), duration: { min: .25, max: .6 }, delay: .14, ease: 'power2.inOut' } : false,
+        snap: snapOn ? { snapTo: (v, self) => snapTarget(v, self ? self.direction : 0), duration: { min: .9, max: 1.5 }, delay: .12, ease: 'power2.inOut' } : false,
       });
-    } else {   // dependency-free driver
+    } else {
       let tick = false, idle = 0, lastY = window.scrollY, d = 0;
       const calc = () => { tick = false; const r = el.getBoundingClientRect(), total = el.offsetHeight - pin.offsetHeight; onProgress(clamp(-r.top / Math.max(1, total), 0, 1)); };
       window.addEventListener('scroll', () => {
@@ -1643,16 +1637,16 @@ const Showcase = (() => {
     const tag = (e.target.tagName || '').toLowerCase(); if (['input', 'textarea', 'select'].includes(tag)) return;
     const inside = pin.contains(document.activeElement);
     const next = e.key === 'ArrowRight' || ((e.key === 'ArrowDown' || e.key === 'PageDown') && inside);
-    const prev = e.key === 'ArrowLeft' || ((e.key === 'ArrowUp' || e.key === 'PageUp') && inside);
-    if ((next || prev) && (visible || inside)) { const tg = cur + (next ? 1 : -1); if (tg >= 0 && tg < N) { e.preventDefault(); scrollToStage(tg); } }
+    const prv = e.key === 'ArrowLeft' || ((e.key === 'ArrowUp' || e.key === 'PageUp') && inside);
+    if ((next || prv) && (visible || inside)) { const tg = cur + (next ? 1 : -1); if (tg >= 0 && tg < N) { e.preventDefault(); scrollToStage(tg); } }
   });
 
   /* ---------- boot ---------- */
   async function init() {
-    const wantGL = CONFIG.flags.webgl && window.innerHeight >= 480;
-    if (wantGL) { mode = 'gl'; try { await initGL(); } catch (err) { console.warn('[showcase] WebGL unavailable, using lightweight mode:', err && err.message); mode = 'init'; gl = null; } }
+    if (CONFIG.flags.webgl && window.innerHeight >= 480) { mode = 'gl'; try { await initGL(); } catch (err) { console.warn('[showcase] water simulation unavailable, using lightweight mode:', err && err.message); mode = 'init'; gl = null; } }
     if (mode !== 'gl') { mode = 'init'; useFallback(); }
     layout();
+    if (mode === 'gl' && REDUCED.matches) { impact(0, 1); for (let k = 0; k < 150; k++) simStep(); }   // reduced motion: one settled, still frame
     new ResizeObserver(() => { layout(); }).observe(pin);
     new IntersectionObserver(es => es.forEach(en => { visible = en.isIntersecting; if (visible) wake(); }), { threshold: [0, .01] }).observe(pin);
     document.addEventListener('visibilitychange', () => { if (!document.hidden) wake(); });
