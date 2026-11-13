@@ -1234,14 +1234,14 @@ $('#nl-form').addEventListener('submit', e => {
        bottom-right preview → main position → upper-left exit (scaling as they go).
    Requires WebGL2 + float render targets; otherwise a lightweight CSS fallback is shown.
    ===================================================================== */
-const SC_PALETTES = {   // [dark ring tone, silver water, champagne light]
-  'serum-vince':    ['#2a313d', '#cdd4db', '#e6b985'],
-  'cream-jade':     ['#3a3036', '#ddd1d4', '#f2b6bd'],
-  'mask-oriflame':  ['#2a2e3a', '#c8cbd5', '#cdc4ea'],
-  'cleanser-rose':  ['#34303a', '#dccfd4', '#f4b3bf'],
-  'mist-rose':      ['#35303a', '#dcd0d6', '#f4a3b0'],
-  'body-raspberry': ['#372f3b', '#d9cfd7', '#e68ca8'],
-  'cream-dlirss':   ['#33323a', '#d9d4c9', '#f1b86e'],
+const SC_PALETTES = {   // [dark ring tone, water colour, light tint] — tuned per product
+  'serum-vince':    ['#5a3410', '#e0a05a', '#ffd08a'],
+  'cream-jade':     ['#6b2f3c', '#ee9aa6', '#ffc2c8'],
+  'mask-oriflame':  ['#3a3550', '#a79fc4', '#d6cdf5'],
+  'cleanser-rose':  ['#6e2e42', '#f0a0b4', '#ffc4d0'],
+  'mist-rose':      ['#7a1f33', '#ee6f86', '#ffa3b3'],
+  'body-raspberry': ['#6a1d44', '#d9608f', '#ff9cc0'],
+  'cream-dlirss':   ['#7a3a0c', '#f0a04a', '#ffc878'],
 };
 const SC_TEXT = {       // charcoal type with an accent taken from each pack
   'serum-vince': '#a8611f', 'cream-jade': '#b4505f', 'mask-oriflame': '#6c5f9a', 'cleanser-rose': '#b8566a',
@@ -1257,7 +1257,7 @@ vec4 fch(ivec2 p, ivec2 sz){ return texelFetch(uS, clamp(p, ivec2(0), sz - 1), 0
 float src(vec4 s, vec2 pw){            // s = (x, z, age, amp): a droplet impact = short ring-train forcing
   if(s.z < 0. || s.z > 1.3) return 0.;
   vec2 d = pw - s.xy;
-  return s.w * exp(-dot(d, d) / .0113) * exp(-s.z / .30) * -sin(6.2831853 * 6.5 * s.z);
+  return s.w * exp(-dot(d, d) / .0060) * exp(-s.z / .55) * -sin(6.2831853 * 9. * s.z);
 }
 void main(){
   ivec2 sz = textureSize(uS, 0), ip = ivec2(gl_FragCoord.xy);
@@ -1307,14 +1307,19 @@ vec3 waterAt(vec2 p, out vec3 nrm, out float fz){
   vec2 sw = vec2(sin(X * 2.3 + uTime * .45 + sin(Z * 1.7 + uTime * .31) * 1.6), sin(Z * 2.1 - uTime * .38 + sin(X * 1.5 - uTime * .27) * 1.4)) * .016;
   sw += vec2(sin(X * 7.3 - uTime * .9 + Z * 3.1), sin(Z * 6.1 + uTime * .8 + X * 2.7)) * .005;
   sw *= .4 + .6 * fz;
-  nrm = normalize(vec3(-sm.b * fz + sw.x, 1., -sm.a * fz + sw.y));
+  nrm = normalize(vec3(-sm.b * fz * 1.7 + sw.x, 1., -sm.a * fz * 1.7 + sw.y));
+  float ee = .035 * (1. + Z * .15);
+  float lap = (simAt(vec2(X + ee, Z)).b - simAt(vec2(X - ee, Z)).b + simAt(vec2(X, Z + ee)).a - simAt(vec2(X, Z - ee)).a) / (2. * ee) * fz;
   vec3 V = normalize(vec3(X, -1., Z)), R = reflect(V, nrm);
   float rip = smoothstep(.02, .3, length(sm.ba) * fz + length(sw));
   float cosT = clamp(dot(-V, nrm), 0., 1.), Fr = .06 + .94 * pow(1. - cosT, 4.);
-  vec3 body = mix(uMid * .96, uDeep * .9, clamp(.1 + length(sm.ba) * fz * .9, 0., .7));
+  vec3 body = mix(uMid * .88, uDeep * .8, clamp(.12 + length(sm.ba) * fz * 1.2, 0., .75));
+  body += uWarm * clamp(-lap * .9, 0., 1.) * .35 + vec3(1.) * clamp(-lap * .5, 0., 1.) * .22;   // light focused by crests
+  body *= 1. - clamp(lap * .5, 0., .35);                                                       // troughs defocus
   vec3 w = mix(body, envMap(R, rip), clamp(Fr * 1.7 + .3, 0., 1.));
   vec3 L = normalize(vec3(-.4, .5, .75));
-  w += vec3(1.) * pow(max(dot(R, L), 0.), 420.) * 1.2 * mix(.2, 1., rip);
+  w += vec3(1.) * pow(max(dot(R, L), 0.), 420.) * 1.6 * mix(.2, 1., rip);
+  w += vec3(1.) * pow(max(dot(R, normalize(vec3(.35, .55, .6))), 0.), 90.) * .35 * rip;   // soft sun sheen on crests
   w = mix(w, haze, smoothstep(2.6, 9., Z));
   return mix(sky, w, smoothstep(-6. * uK, 16. * uK, dy));
 }
@@ -1506,7 +1511,7 @@ const Showcase = (() => {
   function simStep() {
     gl.useProgram(US.p); gl.bindFramebuffer(gl.FRAMEBUFFER, simF[si ^ 1]); gl.viewport(0, 0, SIM, SIM);
     gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, simT[si]); gl.uniform1i(US.uS, 0);
-    gl.uniform1f(US.uK, .34); gl.uniform1f(US.uDamp, .9988); gl.uniform1f(US.uDx, DX); gl.uniform2f(US.uDom, DX0, DZ0);
+    gl.uniform1f(US.uK, .34); gl.uniform1f(US.uDamp, .9993); gl.uniform1f(US.uDx, DX); gl.uniform2f(US.uDom, DX0, DZ0);
     const tnow = simSteps * STEP;
     [US.uS0, US.uS1].forEach((u, k) => { const s = srcs[k]; gl.uniform4f(u, s ? s.x : 0, s ? s.z : 0, s ? tnow - s.t0 : -1, s ? s.amp * .014 : 0); });
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); si ^= 1; simSteps++;
